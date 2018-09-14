@@ -1,0 +1,18 @@
+<update_data_list>
+<region id="{{REGION}}">
+<force_update>
+<system level1_system_version="05.550.000" level1_system_ex_version="0" level0_system_version="05.550.000" level0_system_ex_version="0"/>
+</force_update>
+<system_pup version="05.550.000" sdk_version="05.550.001" label="5.55" ex_version="0">
+<update_data update_type="full">
+
+<image size="460004352">http://deu01.ps4.update.playstation.net/update/ps4/image/2018_0510/sys_ee98baebca4fec9f9d9e85fdeb2cd0d0/PS4UPDATE.PUP?dest=eu</image>
+</update_data>
+</system_pup>
+<recovery_pup type="default">
+
+<system_pup version="05.550.000" sdk_version="05.550.001" label="5.55" ex_version="0"/>
+<image size="1039993344">http://deu01.ps4.update.playstation.net/update/ps4/image/2018_0510/rec_484773c0ee36ae22c9e4e4c051968861/PS4UPDATE.PUP?dest=eu</image>
+</recovery_pup>
+</region>
+</update_data_list>

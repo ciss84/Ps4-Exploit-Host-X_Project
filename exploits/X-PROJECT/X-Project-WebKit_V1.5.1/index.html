@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+  <title>X-Project"5.5X Mod by 84ciss</title>   
+  <link rel="stylesheet" href="css/icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<BODY BACKGROUND="./js/font.gif">
+<div class="topmask"></div>
+<div id="content" class="content"><iframe name="content" class="content" src="payloads/blank.html"></iframe></div>
+<h1 class="top" onclick="DebugMode()">By DEFAULTDNB AND LEEFUL:</h1>
+<h2 class="clock" id="clock">LOADING..</h2>
+<div id="xmb-contain">
+  <div id="xmb">
+   
+    <ul>
+      <li class="column" v-for="column,index in columns" v-bind:class="{active:column.active}" v-bind:style="{left:column.position.x+'px'}">
+        <div class="cell" v-bind:class="{active:column.active}" v-on:click="highlightCell(column.index,0)">
+		<i class="material-icons xmb-icon">{{column.icon}}</i>
+        <label>{{column.title}}</label>
+        </div>
+        <ul>
+          <li class="cell submenu" v-for="item,itemIndex in column.items" v-bind:class="{active:item.active}" v-bind:style="{top:item.position.y+'px'}" v-on:click="highlightCell(column.index,itemIndex)"> 
+          <a v-bind:href="item.href = item.expage" target="content">
+            <div class="selected">
+              <div class="material-icons">{{item.icon}}</div>
+              <div class="titles">{{item.title}}</div>
+			  <div class="desc">{{item.desc}}</div>
+			  <div class="subs">Version:{{item.version}}</div>
+            </div>
+          </a>
+		</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/lodash.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+var x = document.getElementsByTagName("UL")[0];
+var payloadcount = ((document.getElementById('xmb-contain').getElementsByTagName('li').length)- 2); //no; items + columns - 2 for debug>test
+x.getElementsByTagName("LI")[payloadcount].style.display = "none";
+function DebugMode() {
+    var x = document.getElementsByTagName("UL")[0];
+    if (x.getElementsByTagName("LI")[payloadcount].style.display === "none") {
+        x.getElementsByTagName("LI")[payloadcount].style.display = "block";
+    } else {
+        x.getElementsByTagName("LI")[payloadcount].style.display = "none";
+    }
+	alert("DEBUG TOGGLED \n --------------------- \n L1 = QUICK VTXHEN \n R1 = QUICK CACHE");
+}
+var i = setInterval(function() {
+		document.getElementById('clock').innerHTML = new Date();
+		document.getElementById('ident').innerHTML = ("Firmware " + navigator.userAgent.substring(navigator.userAgent.indexOf("5.0 (") + 19, navigator.userAgent.indexOf(") Apple")) + " detected.") ;
+		document.getElementById("info").innerHTML = txt;
+}, 1000);
+var txt = "";
+txt += "Platform: " + navigator.platform + "<br>";
+txt += "Language: " + navigator.language + "<br>";
+txt += "CodeName: " + navigator.appCodeName + "<br>";
+txt += "Browser: " + navigator.appName + "<br>";
+txt += "Online: " + navigator.onLine + "<br>";
+txt += "Cookies: " + navigator.cookieEnabled + "<br>";
+</script>
+<h3 class="info" id="info">LOADING..</h3>
+<h4 class="ident" id="ident" onclick="PayCount()">LOADING..</h4>
+<h2 class="white-text">HOST 5.5X Mod by 84ciss:</h2>
+</body>
+</html>
